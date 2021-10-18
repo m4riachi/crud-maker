@@ -1,0 +1,54 @@
+{
+    "name": "m4riachi/crud-maker",
+    "description": "Create crud from scratch for laravel",
+    "keywords": [
+        "m4riachi",
+        "crud-maker"
+    ],
+    "homepage": "https://github.com/m4riachi/crud-maker",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "taoufiq ben",
+            "email": "taoufiq.benmessaoud@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "M4riachi\\CrudMaker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "M4riachi\\CrudMaker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "M4riachi\\CrudMaker\\CrudMakerServiceProvider"
+            ],
+            "aliases": {
+                "CrudMaker": "M4riachi\\CrudMaker\\CrudMakerFacade"
+            }
+        }
+    }
+}
