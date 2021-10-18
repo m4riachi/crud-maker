@@ -4,5 +4,7 @@ namespace M4riachi\CrudMaker;
 
 class CrudMaker
 {
-    // Build your next great package.
+    public static function showMessage() {
+        dd(1);
+    }
 }

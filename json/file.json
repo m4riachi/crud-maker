@@ -1,0 +1,18 @@
+[
+  {
+    "model":  "product",
+    "columns": [
+      {
+        "name": "id",
+        "fill": false
+      },
+      {
+        "name": "name",
+        "type": "string:50",
+        "fill": true,
+        "validator": "required",
+        "factory": "name"
+      }
+    ]
+  }
+]

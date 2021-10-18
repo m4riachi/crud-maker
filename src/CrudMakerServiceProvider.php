@@ -22,7 +22,11 @@ class CrudMakerServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('crud-maker.php'),
-            ], 'config');
+            ], 'crud-maker-config');
+
+            $this->publishes([
+                __DIR__.'/../json/file.json' => base_path('crud-maker.json'),
+            ], 'crud-maker-json');
 
             // Publishing the views.
             /*$this->publishes([
@@ -40,7 +44,9 @@ class CrudMakerServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                \M4riachi\CrudMaker\Console\CrudMaker::class
+            ]);
         }
     }
 
